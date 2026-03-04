@@ -30,7 +30,7 @@ export default function Home(){
         <form>
             <label>
                 Søk etter film
-                <input type="search" placeholder="Harry Potter" onChange={handleChange}></input>
+                <input type="search" placeholder="John Wick" onChange={handleChange}></input>
             </label>
         </form>
         <button onClick={getMovies}>Søk</button>
