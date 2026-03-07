@@ -38,14 +38,16 @@ export default function Home(){
 
     return (
     <main>
-        <h1>FILMSØK</h1>
-        <form onSubmit={handleSubmit}>
-            <label >
-                Søk etter film
-                <input type="search" placeholder="James Bond" onChange={handleChange}></input>
-            </label>
-            <button onClick={getMovies}>Søk</button>    
-        </form>
+        <article  className="search">
+            <h1>FILMSØK</h1>
+            <p>Søk etter film her:</p>
+            <form onSubmit={handleSubmit}>
+                <label >
+                    <input type="search" placeholder="James Bond" onChange={handleChange}></input>
+                </label>
+                <button onClick={getMovies}>Søk</button>    
+            </form>
+        </article>    
         <section>
             {movies.map((movie) => (
             <MovieCard key={movie.imdbID + 'xt'} movie={movie} />   
