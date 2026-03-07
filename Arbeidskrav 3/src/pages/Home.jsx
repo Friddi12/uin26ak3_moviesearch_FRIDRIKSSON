@@ -1,7 +1,8 @@
 import { useState } from "react"
 
 export default function Home(){
-    const [search, setSearch] = useState()
+    const [search, setSearch] = useState("")
+    const [movies, setMovies] = useState([])
 
     const baseUrl = `http://www.omdbapi.com/?s=${search}&apikey=`
     const apiKey = import.meta.env.VITE_APP_API_KEY
@@ -23,20 +24,24 @@ export default function Home(){
     const handleChange = (e)=>{
         setSearch(e.target.value)
     }
+        const handleSubmit = (e) =>{
+        e.preventDefault()
+   
+    }
 
     return (
     <main>
         <h1>Forside</h1>
-        <form>
-            <label>
+        <form onSubmit={handleSubmit}>
+            <label >
                 Søk etter film
-                <input type="search" placeholder="John Wick" onChange={handleChange}></input>
+                <input type="search" placeholder="James Bond" onChange={handleChange}></input>
             </label>
+            <button onClick={getMovies}>Søk</button>    
         </form>
-        <button onClick={getMovies}>Søk</button>
+        
     </main>
         
     )
 
-    
 }
