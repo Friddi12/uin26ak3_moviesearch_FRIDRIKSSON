@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import MovieCard from "../components/MovieCard"
 
 export default function Home(){
-    const [search, setSearch] = useState("")
+    //Setter søket til "James Bond", bruker useEffect senere for å laste in filmene
+    const [search, setSearch] = useState("James Bond")
     const [movies, setMovies] = useState([])
+
+
 
     //Legger til '&type=movie' for å unngå serier og spill
     const baseUrl = `http://www.omdbapi.com/?s=${search}&type=movie&apikey=`
@@ -26,6 +29,10 @@ export default function Home(){
             console.error(err);
         }
     }
+    
+    useEffect(() => {
+        getMovies()
+    })
 
     const handleChange = (e)=>{
         setSearch(e.target.value)
