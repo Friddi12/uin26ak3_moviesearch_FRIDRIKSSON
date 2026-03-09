@@ -22,8 +22,7 @@ export default function Home(){
                 setMovies(data.Search)
             }
             
-            console.log(data)
-
+            console.log("Data", data)
         }
         catch(err){
             console.error(err);
