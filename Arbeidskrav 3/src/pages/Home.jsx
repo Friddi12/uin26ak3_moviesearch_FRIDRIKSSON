@@ -32,7 +32,7 @@ export default function Home(){
     
     useEffect(() => {
         getMovies()
-    })
+    }, [])
 
     const handleChange = (e)=>{
         setSearch(e.target.value)
