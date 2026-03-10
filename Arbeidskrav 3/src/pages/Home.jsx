@@ -23,6 +23,7 @@ export default function Home(){
             }
             
             console.log("Data", data)
+
         }
         catch(err){
             console.error(err);
@@ -43,7 +44,7 @@ export default function Home(){
     }
 
     return (
-    <main>
+    <main id="home">
         <article  className="search">
             <h1>FILMSØK</h1>
             <p>Søk etter film her:</p>
