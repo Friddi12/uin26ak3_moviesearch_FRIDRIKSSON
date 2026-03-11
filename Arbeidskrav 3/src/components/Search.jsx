@@ -5,6 +5,7 @@ export default function Search() {
         //Setter søket til "James Bond", bruker useEffect senere for å laste in filmene
     const [search, setSearch] = useState("James Bond")
     const [movies, setMovies] = useState([])
+    const [count, setCount] = useState(0) // FANT INSPIRASJON FOR DENNE KODEN FRA GOOGLE-SØK KI RESULTAT: https://www.google.com/search?q=react+useeffect+happen+after+4+keystrokes&sca_esv=7106858f813936e4&sxsrf=ANbL-n7BnuKg-YFhPAJfkZktZVz37FHSzA%3A1773231377472&ei=EV2xaay9HPXWwPAP_JSW4A0&biw=1280&bih=631&ved=0ahUKEwjsie_S6ZeTAxV1KxAIHXyKBdwQ4dUDCBE&uact=5&oq=react+useeffect+happen+after+4+keystrokes&gs_lp=Egxnd3Mtd2l6LXNlcnAiKXJlYWN0IHVzZWVmZmVjdCBoYXBwZW4gYWZ0ZXIgNCBrZXlzdHJva2VzMggQABiiBBiJBTIIEAAYgAQYogQyCBAAGKIEGIkFMggQABiABBiiBDIIEAAYgAQYogRIyhVQrQhY0hRwAHgCkAEAmAGbAaABrgiqAQM3LjS4AQPIAQD4AQGYAgygAtIIwgIEEAAYR8ICBRAhGKABwgIHECEYoAEYCsICBRAhGJ8FmAMA4gMFEgExIECIBgGQBgiSBwM3LjWgB4MtsgcDNi41uAfOCMIHBDIuMTDIBxGACAA&sclient=gws-wiz-serp
 
 
 
@@ -30,11 +31,15 @@ export default function Search() {
         }
     }
     // SØK SKJER ETTER MINIMUM 3 TEGN FRA BRUKER
-    useEffect(() => {
+    useEffect(() => {   // FANT INSPIRASJON FOR DENNE KODEN FRA GOOGLE-SØK KI RESULTAT: https://www.google.com/search?q=react+useeffect+happen+after+4+keystrokes&sca_esv=7106858f813936e4&sxsrf=ANbL-n7BnuKg-YFhPAJfkZktZVz37FHSzA%3A1773231377472&ei=EV2xaay9HPXWwPAP_JSW4A0&biw=1280&bih=631&ved=0ahUKEwjsie_S6ZeTAxV1KxAIHXyKBdwQ4dUDCBE&uact=5&oq=react+useeffect+happen+after+4+keystrokes&gs_lp=Egxnd3Mtd2l6LXNlcnAiKXJlYWN0IHVzZWVmZmVjdCBoYXBwZW4gYWZ0ZXIgNCBrZXlzdHJva2VzMggQABiiBBiJBTIIEAAYgAQYogQyCBAAGKIEGIkFMggQABiABBiiBDIIEAAYgAQYogRIyhVQrQhY0hRwAHgCkAEAmAGbAaABrgiqAQM3LjS4AQPIAQD4AQGYAgygAtIIwgIEEAAYR8ICBRAhGKABwgIHECEYoAEYCsICBRAhGJ8FmAMA4gMFEgExIECIBgGQBgiSBwM3LjWgB4MtsgcDNi41uAfOCMIHBDIuMTDIBxGACAA&sclient=gws-wiz-serp
+        if (count > 0 && count % 4 === 0) {
+            console.log('4 tastetrykk i søkefelt')
+        }
         getMovies()
-    }, )
+    }, [count])
 
     const handleChange = (e)=>{
+        setCount((prev) => prev + 1)
         setSearch(e.target.value)
     }
 
@@ -65,3 +70,7 @@ return (
         
     )
 }
+
+//KILDER BRUKT I DENNE KODEN
+//Google søk, topp resultat var KI foreslag som jeg fikk inspirasjon fra
+//LENKE TIL SØK: // FANT INSPIRASJON FOR DENNE KODEN FRA GOOGLE-SØK KI RESULTAT: https://www.google.com/search?q=react+useeffect+happen+after+4+keystrokes&sca_esv=7106858f813936e4&sxsrf=ANbL-n7BnuKg-YFhPAJfkZktZVz37FHSzA%3A1773231377472&ei=EV2xaay9HPXWwPAP_JSW4A0&biw=1280&bih=631&ved=0ahUKEwjsie_S6ZeTAxV1KxAIHXyKBdwQ4dUDCBE&uact=5&oq=react+useeffect+happen+after+4+keystrokes&gs_lp=Egxnd3Mtd2l6LXNlcnAiKXJlYWN0IHVzZWVmZmVjdCBoYXBwZW4gYWZ0ZXIgNCBrZXlzdHJva2VzMggQABiiBBiJBTIIEAAYgAQYogQyCBAAGKIEGIkFMggQABiABBiiBDIIEAAYgAQYogRIyhVQrQhY0hRwAHgCkAEAmAGbAaABrgiqAQM3LjS4AQPIAQD4AQGYAgygAtIIwgIEEAAYR8ICBRAhGKABwgIHECEYoAEYCsICBRAhGJ8FmAMA4gMFEgExIECIBgGQBgiSBwM3LjWgB4MtsgcDNi41uAfOCMIHBDIuMTDIBxGACAA&sclient=gws-wiz-serp
