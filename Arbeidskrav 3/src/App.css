@@ -15,8 +15,9 @@
 }
 
 /*Starten på egen CSS*/
-.search{
 
+/* Søke felt */
+.search{
   form{
     display: flex;
     flex-direction: column;
@@ -36,8 +37,8 @@
   }
 }
 
+/* Hjemmeside/Filmkort/Søkeresultat */
 #home {
-
   section{
     display: flex;
     flex-direction: row;
@@ -55,3 +56,21 @@
     }
   }
 }
+
+/* Filmside/Info om film */
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1{
+    width: 100%;
+    text-align: center;
+  }
+
+  img{
+    max-width: 500px;
+  }
+}
+
+/* Jeg synes nesting er veldig kult, skulle kanksje brukt SASS for en mer modulær struktur, men det var ikke spesifisert i oppgaven */

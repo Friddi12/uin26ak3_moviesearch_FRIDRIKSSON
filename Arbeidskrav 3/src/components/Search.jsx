@@ -29,10 +29,10 @@ export default function Search() {
             console.error(err);
         }
     }
-    
+    // SØK SKJER ETTER MINIMUM 3 TEGN FRA BRUKER
     useEffect(() => {
         getMovies()
-    }, [])
+    }, )
 
     const handleChange = (e)=>{
         setSearch(e.target.value)
