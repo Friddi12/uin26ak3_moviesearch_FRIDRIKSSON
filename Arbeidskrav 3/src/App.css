@@ -16,6 +16,13 @@
 
 /*Starten på egen CSS*/
 
+/*Knapp*/
+.button{
+  width: 100%;
+  max-width: 218px;
+
+}
+
 /* Søke felt */
 .search{
   form{
@@ -27,12 +34,6 @@
     input{
       width: 100%;
       max-width: 218px;
-    }
-
-    button{
-      width: 100%;
-      max-width: 218px;
-
     }
   }
 }
@@ -46,8 +47,14 @@
     width: 100%;
 
     article{
-      max-width: 200px;
+      width: 200px;
       margin: 1rem;
+      border: solid black 3px;
+      background-color: white;
+      color: black;
+      padding: 0.5rem;
+
+      align-items: center;
 
       img{
         max-width: 200px;
@@ -60,8 +67,10 @@
 /* Filmside/Info om film */
 .details{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  padding: .5rem;
 
   h1{
     width: 100%;
@@ -71,6 +80,17 @@
   img{
     max-width: 500px;
   }
+}
+/* Utdypet info om film */
+.more-info{
+  padding: .5rem;
+  margin: .2rem;
+
+  width: 800px;
+
+  background-color: white;
+  color: black;
+  border: solid black 2px;
 }
 
 /* Jeg synes nesting er veldig kult, skulle kanksje brukt SASS for en mer modulær struktur, men det var ikke spesifisert i oppgaven */

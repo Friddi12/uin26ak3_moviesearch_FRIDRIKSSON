@@ -13,6 +13,7 @@ const noImage = "/noimg.jpg"
             <img src={movie?.Poster !== "N/A" ? movie?.Poster : noImage} alt={movie?.Title} onError={(e) => { e.target.src = noImage }}/> 
             {/* VISE UTGIVELSESÅR */}
             <p>Utgivelsesår: {movie?.Year}</p>
+            {/* Bruker imdbID, fikk det ikke til å fungere med navn, URL navn vil da desverre bli til imdbID isteden for filmnavn */}
             <Link to={`/${movie.imdbID}`}>Mer om film</Link>
         </article>
     )

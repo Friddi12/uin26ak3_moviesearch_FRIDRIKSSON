@@ -28,7 +28,7 @@ export default function Search() {
             console.error(err);
         }
     }
-    //SØKER JAMES BOND FØR BRUKER KAN SØKE ETTER FILM
+    //SØKER JAMES BOND FØR BRUKER KAN SØKE ETTER FILM - Usikker på hvordan filtrere ut kort-filmer og lignende filmer som bruker navnet James Bond
     useEffect(() => {   
         getMovies()
     }, [])
@@ -60,7 +60,7 @@ return (
                 <label >
                     <input type="search" placeholder="James Bond" onChange={handleChange}></input>
                 </label>
-                <button onClick={getMovies}>Søk</button>    
+                <button onClick={getMovies} className="button">Søk</button>    
             </form>
         </article>
         <section>
