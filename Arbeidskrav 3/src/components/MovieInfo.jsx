@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 
 export default function MovieInfo({movieDetails, noImage}){
 
     return(
         <main>
-      
+            <Link to="/" className="home-logo"> &lt; HJEM</Link>
             <section className="details">
                 {/* VISE TITTEL PÅ FILMEN */}
                 <h1>{movieDetails?.Title}</h1>

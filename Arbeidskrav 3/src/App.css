@@ -38,6 +38,12 @@
   }
 }
 
+/* Home logo */
+/* Ikke en ideel eller vakker løsning, er bare der til å kunne enkelt komme tilbake uten å bruke pil i nettleser */
+.home-logo{
+  font-size: 2rem;
+}
+
 /* Hjemmeside/Filmkort/Søkeresultat */
 #home {
   section{
