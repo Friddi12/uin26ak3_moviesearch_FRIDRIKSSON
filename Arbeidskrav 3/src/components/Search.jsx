@@ -3,7 +3,7 @@ import MovieCard from "../components/MovieCard"
 
 export default function Search() {
     //Setter søket til "James Bond", bruker useEffect senere for å laste inn 10 filmer med 'James Bond' i tittelen
-    const [search, setSearch] = useState("James Bond")
+    const [search, setSearch] = useState("James Bond") //Kan teoretisk sett liste ut JB ved å hardkode tittlene til filmene et eller annet sted, men føler at det går imot det dynamiske hensiktet med prosjektet
     const [movies, setMovies] = useState([])
 
 

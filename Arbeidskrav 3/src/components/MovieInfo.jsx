@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 export default function MovieInfo({movieDetails, noImage}){
-
+//Komponent som viser detaljer om film, kan brukes om til info om andre ting som serier, spill osv.
     return(
         <main>
             <Link to="/" className="home-logo"> &lt; HJEM</Link>
