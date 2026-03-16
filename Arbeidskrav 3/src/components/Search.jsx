@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import MovieCard from "../components/MovieCard"
 
 export default function Search() {
-    //Setter søket til "James Bond", bruker useEffect senere for å laste in filmene
+    //Setter søket til "James Bond", bruker useEffect senere for å laste inn 10 filmer med 'James Bond' i tittelen
     const [search, setSearch] = useState("James Bond")
     const [movies, setMovies] = useState([])
 
